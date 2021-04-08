@@ -22,7 +22,7 @@ class Content extends Component {
             this.setState({seconds:this.state.seconds-60})
         }
         else{
-            this.setState({count:0})
+            this.setState({count:0,seconds:0})
         }
     };
     componentDidMount(){
@@ -42,7 +42,7 @@ class Content extends Component {
             <div className="container mt-5">
                 <div className="row mb-5">
                     <div className="col-12 alert bg-dark text-light text-center p-5">
-                        <button  disabled={this.state.count===1||this.state.count===0} onClick={this.decrementCounter}  className="btn btn-danger p-4 mr-2">-</button>
+                        <button  disabled={this.state.count===0} onClick={this.decrementCounter}  className="btn btn-danger p-4 mr-2">-</button>
                         <b className="alert alert-primary p-5 mr-2"><span className="badge badge-warning p-2 mr-1">{this.state.count}</span>{this.state.count===1 ? 'Minute':'Minutes'} </b>
                         <button  disabled={this.state.count===5}  onClick={this.increaseCounter} className="btn btn-primary p-4">+</button>
 
